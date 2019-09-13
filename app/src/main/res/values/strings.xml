@@ -23,4 +23,20 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="menu_registeration">Registration</string>
+    <string name="menu_techReg">Technical Registration</string>
+
+    <string name="hint_teamName">Team Name</string>
+    <string name="hint_member1">Member-1 Name</string>
+    <string name="hint_member2">Member-2 Name</string>
+    <string name="hint_member3">Member-3 Name</string>
+    <string name="btn_Register">Register</string>
+    <string name="imgView_techReg">Tech-Registration Image</string>
+    <string name="hint_contactNo">Team Contact Number</string>
+    <string name="menu_treasureHuntReg">Treasure Hunt Registration</string>
+    <string name="imgView_treasureHuntReg">Treasure Hunt</string>
+    <string name="hint_member4">Member-4 Name</string>
+    <string name="hint_member5">Member-5 Name</string>
+
+
 </resources>

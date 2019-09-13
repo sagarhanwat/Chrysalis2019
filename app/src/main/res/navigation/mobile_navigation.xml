@@ -10,6 +10,16 @@
         android:name="com.sagar.chrysalis2019.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_techReg"
+        android:name="com.sagar.chrysalis2019.ui.Registration.technicalRegistration"
+        android:label="@string/menu_techReg"
+        tools:layout="@layout/fragment_technical_registration" />
+    <fragment
+        android:id="@+id/nav_treasureHuntReg"
+        android:name="com.sagar.chrysalis2019.ui.Registration.treasureHuntRegistration"
+        android:label="@string/menu_treasureHuntReg"
+        tools:layout="@layout/fragment_tresurehunt_registration" />
 
 
 

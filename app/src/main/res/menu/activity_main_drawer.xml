@@ -22,16 +22,16 @@
             android:title="@string/menu_tools" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/menu_registeration">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
+                android:id="@+id/nav_techReg"
+                android:icon="@drawable/ic_menu_techreg"
+                android:title="@string/menu_techReg" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
+                android:id="@+id/nav_treasureHuntReg"
+                android:icon="@drawable/ic_menu_treasurehunt_reg"
+                android:title="@string/menu_treasureHuntReg" />
         </menu>
     </item>
 
