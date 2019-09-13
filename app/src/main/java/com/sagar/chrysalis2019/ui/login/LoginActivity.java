@@ -135,16 +135,22 @@ public class LoginActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent i = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(i);
+                            Toast.makeText(getApplicationContext(), "New user Created",Toast.LENGTH_SHORT).show();
 
                         } else {
                             // If sign in fails, display a message to the user.
 
-                            Toast.makeText(getApplicationContext(), "Authentication failed.",Toast.LENGTH_SHORT).show();
+
                              mAuth.signInWithEmailAndPassword(usernameEditText.getText().toString(),passwordEditText.getText().toString()).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                                  @Override
                                  public void onComplete(@NonNull Task<AuthResult> task) {
                                         if(task.isSuccessful()){
                                             Toast.makeText(LoginActivity.this,"successfull",Toast.LENGTH_SHORT).show();
+                                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                                            startActivity(i);
+                                        }
+                                        else {
+                                            Toast.makeText(LoginActivity.this,"Login Fail",Toast.LENGTH_SHORT);
                                         }
                                  }
                              });
