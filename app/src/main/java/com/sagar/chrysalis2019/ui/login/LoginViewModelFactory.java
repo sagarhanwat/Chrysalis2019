@@ -1,8 +1,8 @@
 package com.sagar.chrysalis2019.ui.login;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.annotation.NonNull;
 
 import com.sagar.chrysalis2019.data.LoginDataSource;
 import com.sagar.chrysalis2019.data.LoginRepository;

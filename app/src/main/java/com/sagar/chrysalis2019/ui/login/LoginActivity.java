@@ -1,18 +1,8 @@
 package com.sagar.chrysalis2019.ui.login;
 
 import android.app.Activity;
-
-import androidx.annotation.NonNull;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -24,6 +14,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -31,8 +28,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.sagar.chrysalis2019.MainActivity;
 import com.sagar.chrysalis2019.R;
-import com.sagar.chrysalis2019.ui.login.LoginViewModel;
-import com.sagar.chrysalis2019.ui.login.LoginViewModelFactory;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -48,6 +43,15 @@ public class LoginActivity extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user!=null){
+            Intent i= new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(i);
+        }
+
+
+
         final EditText usernameEditText = findViewById(R.id.username);
         final EditText passwordEditText = findViewById(R.id.password);
         final Button loginButton = findViewById(R.id.login);
@@ -83,9 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                     updateUiWithUser(loginResult.getSuccess());
                 }
                 setResult(Activity.RESULT_OK);
-
-                //Complete and destroy login activity once successful
-                finish();
+                createAndLogin(usernameEditText.getText().toString(),passwordEditText.getText().toString());
             }
         });
 
@@ -113,8 +115,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    loginViewModel.login(usernameEditText.getText().toString(),
-                            passwordEditText.getText().toString());
+
                 }
                 return false;
             }
@@ -125,39 +126,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 //loginViewModel.login(usernameEditText.getText().toString(),passwordEditText.getText().toString());
-
-                mAuth.createUserWithEmailAndPassword(usernameEditText.getText().toString(),passwordEditText.getText().toString()).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                            startActivity(i);
-                            Toast.makeText(getApplicationContext(), "New user Created",Toast.LENGTH_SHORT).show();
-
-                        } else {
-                            // If sign in fails, display a message to the user.
+                createAndLogin(usernameEditText.getText().toString(),passwordEditText.getText().toString());
 
 
-                             mAuth.signInWithEmailAndPassword(usernameEditText.getText().toString(),passwordEditText.getText().toString()).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                                 @Override
-                                 public void onComplete(@NonNull Task<AuthResult> task) {
-                                        if(task.isSuccessful()){
-                                            Toast.makeText(LoginActivity.this,"successfull",Toast.LENGTH_SHORT).show();
-                                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                                            startActivity(i);
-                                        }
-                                        else {
-                                            Toast.makeText(LoginActivity.this,"Login Fail",Toast.LENGTH_SHORT);
-                                        }
-                                 }
-                             });
-
-                        }
-                    }
-                });
             }
         });
     }
@@ -170,5 +141,40 @@ public class LoginActivity extends AppCompatActivity {
 
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
+    }
+
+    private void createAndLogin(final String username, final String password){
+        mAuth.createUserWithEmailAndPassword(username,password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    // Sign in success, update UI with the signed-in user's information
+
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(i);
+                    Toast.makeText(getApplicationContext(), "New user Created",Toast.LENGTH_SHORT).show();
+
+                } else {
+                    // If sign in fails, display a message to the user.
+
+
+                    mAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(LoginActivity.this,"successfull",Toast.LENGTH_SHORT).show();
+                                Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(i);
+                            }
+                            else {
+                                Toast.makeText(LoginActivity.this,"Login Fail",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
+                }
+            }
+        });
     }
 }

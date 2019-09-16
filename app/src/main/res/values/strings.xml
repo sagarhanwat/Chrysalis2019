@@ -37,6 +37,7 @@
     <string name="imgView_treasureHuntReg">Treasure Hunt</string>
     <string name="hint_member4">Member-4 Name</string>
     <string name="hint_member5">Member-5 Name</string>
+    <string name="action_logout">Logout</string>
 
 
 </resources>
