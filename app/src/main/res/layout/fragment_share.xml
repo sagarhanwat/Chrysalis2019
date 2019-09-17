@@ -3,4 +3,27 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+   <ImageView
+       android:id="@+id/ImgUPload"
+       android:layout_width="match_parent"
+       android:src="@mipmap/ic_launcher"
+       android:layout_height="250dp"
+       android:contentDescription="@string/image_upload" />
+
+    <EditText
+        android:id="@+id/ET_img_uploadText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/add_caption"
+        />
+
+
+    <Button
+        android:id="@+id/btn_img_upload"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_upload_image"
+        />
 </LinearLayout>

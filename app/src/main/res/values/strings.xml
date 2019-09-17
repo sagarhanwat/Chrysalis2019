@@ -38,6 +38,16 @@
     <string name="hint_member4">Member-4 Name</string>
     <string name="hint_member5">Member-5 Name</string>
     <string name="action_logout">Logout</string>
+    <string name="tv_our_team">Developed By</string>
+    <string name="nidhi_jha">Nidhi Jha</string>
+    <string name="sagar_hanwat">Sagar Hanwat</string>
+    <string name="devkant_mishra">Dev Kant Mishra</string>
+    <string name="mohd_tausif_anwar">Mohd Tausif Anwar</string>
+    <string name="item_about_us">About Us</string>
+    <string name="image_upload">image upload</string>
+    <string name="btn_upload_image">Upload</string>
+    <string name="add_caption">Add caption to imgae</string>
+    <string name="menu_gallery_view">Snap Share View</string>
 
 
 </resources>

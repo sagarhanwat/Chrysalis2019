@@ -10,45 +10,44 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>{
-    private ArrayList<String> myValues;
-    public RecyclerViewAdapter (ArrayList<String> myValues){
-        this.myValues= myValues;
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
+
+
+    private ArrayList<announcement> list;
+    public RecyclerViewAdapter (ArrayList<announcement> list){
+        this.list=list;
     }
+
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-       android.view.View listItem;
-        listItem = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview,parent,false);
-        return new MyViewHolder(listItem);
+    public RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        View view =LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview,parent,false);
+
+        return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        try {
-            holder.myTextView.setText(myValues.get(position));
-        }catch (Exception e) {
-
-        }
-
+    public void onBindViewHolder(@NonNull RecyclerViewAdapter.MyViewHolder holder, int position) {
+        holder.TVdescription.setText(list.get(position).getDescription());
+        holder.TVtittle.setText(list.get(position).getTitle());
     }
-
 
     @Override
     public int getItemCount() {
-        return myValues.size();
+        return list.size();
     }
+    class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView TVtittle;
+        TextView TVdescription;
 
-    static class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView myTextView;
-        MyViewHolder(View itemView) {
+        public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            try {
-                myTextView =myTextView.findViewById(R.id.TV_cardview_desc_anunccement);
-            }catch (Exception e) {
-                //Toast.makeText(getClass(),"failed in Recycle view adapter",Toast.LENGTH_SHORT).show();
-            }
+            TVdescription= itemView.findViewById(R.id.TV_cardview_desc_anunccement);
+            TVtittle=itemView.findViewById(R.id.TV_cardview_heading_anunccement);
         }
     }
+
+
 }

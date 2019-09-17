@@ -9,18 +9,24 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_snap_Share"
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/menu_gallery" />
+
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
-        <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
+               android:id="@+id/nav_snap_Share_View"
+               android:icon="@drawable/ic_menu_gallery"
+               android:title="@string/menu_gallery_view" />
+        <!--     <item
+              android:id="@+id/nav_slideshow"
+              android:icon="@drawable/ic_menu_slideshow"
+              android:title="@string/menu_slideshow" />
+          <item
+              android:id="@+id/nav_tools"
+              android:icon="@drawable/ic_menu_manage"
+              android:title="@string/menu_tools" />-->
     </group>
+    <group android:checkableBehavior="single">
 
     <item android:title="@string/menu_registeration">
         <menu>
@@ -35,4 +41,9 @@
         </menu>
     </item>
 
+    <item
+        android:id="@+id/nav_aboutUs"
+        android:icon="@drawable/ic_menu_about_us"
+        android:title="@string/item_about_us" />
+    </group>
 </menu>

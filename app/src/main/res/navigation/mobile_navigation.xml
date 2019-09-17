@@ -11,6 +11,11 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
     <fragment
+        android:id="@+id/nav_snap_Share"
+        android:name="com.sagar.chrysalis2019.ui.Share.SnapShare"
+        android:label="Snap Share"
+        tools:layout="@layout/fragment_share" />
+    <fragment
         android:id="@+id/nav_techReg"
         android:name="com.sagar.chrysalis2019.ui.Registration.technicalRegistration"
         android:label="@string/menu_techReg"
@@ -21,7 +26,16 @@
         android:label="@string/menu_treasureHuntReg"
         tools:layout="@layout/fragment_tresurehunt_registration" />
 
-
+    <fragment
+        android:id="@+id/nav_aboutUs"
+        android:name="com.sagar.chrysalis2019.ui.AboutUs"
+        android:label="About Us"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/nav_snap_Share_View"
+        android:name="com.sagar.chrysalis2019.ui.Share.SnapShareView"
+        android:label="Snap Share View"
+        tools:layout="@layout/fragment_share_view" />
 
 
 
