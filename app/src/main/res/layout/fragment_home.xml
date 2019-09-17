@@ -10,11 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:contentDescription="@string/app_name"
-        android:src="@mipmap/test_image" />
+        android:src="@mipmap/baner_lhome_activity" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleview_home"
-        android:background="@color/colorAccent"
+        android:background="@color/BackGroundWhite"
         android:layout_width="match_parent"
        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 

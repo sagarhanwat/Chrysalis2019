@@ -8,15 +8,22 @@
     android:orientation="vertical"
     >
 
-    <ImageView
-        android:id="@+id/img_coverpic_techReg"
-        android:layout_width="match_parent"
-        android:layout_height="126dp"
-        android:contentDescription="@string/imgView_techReg"
-        app:srcCompat="@mipmap/test_image" />
+<TextView
+    android:textColor="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:textStyle="italic"
+    android:textSize="50dp"
+    android:text="Technical Team"
+    android:gravity="center"
+    android:layout_height="wrap_content"
+    />
 
     <EditText
         android:id="@+id/et_teamName_techReg"
+        android:background="#FFFFFF"
+        android:paddingTop="8dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="3dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -28,6 +35,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:background="#FFFFFF"
+        android:paddingTop="8dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="3dp"
+
         android:hint="@string/hint_member1"
         android:inputType="text"
         android:importantForAutofill="no" />
@@ -36,6 +48,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:background="#FFFFFF"
+        android:paddingTop="8dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="3dp"
         android:hint="@string/hint_member2"
         android:inputType="text"
         android:importantForAutofill="no" />
@@ -43,6 +59,10 @@
         android:id="@+id/et_thirdPersonName_techReg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:paddingTop="8dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="3dp"
         android:ems="10"
         android:hint="@string/hint_member3"
         android:inputType="text"
@@ -53,6 +73,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:background="#FFFFFF"
+        android:paddingTop="8dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="3dp"
         android:hint="@string/hint_contactNo"
         android:inputType="number"
         android:importantForAutofill="no" />
@@ -63,6 +87,8 @@
         android:id="@+id/btn_Register_techReg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:background="@color/BtnBackGround"
         android:text="@string/btn_Register" />
 
 </LinearLayout>

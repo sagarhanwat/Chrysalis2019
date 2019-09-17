@@ -4,7 +4,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <Button
+        android:id="@+id/btn_open_upload_actvity"
+        android:text="Upload Your Photo"
+        android:background="@color/BtnBackGround"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleview_image_share"
         android:background="@color/colorAccent"
@@ -12,5 +18,7 @@
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         />
+
+
 
 </LinearLayout>

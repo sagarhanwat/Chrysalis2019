@@ -47,7 +47,9 @@
     <string name="image_upload">image upload</string>
     <string name="btn_upload_image">Upload</string>
     <string name="add_caption">Add caption to imgae</string>
-    <string name="menu_gallery_view">Snap Share View</string>
+    <string name="menu_gallery_view">Snap Share</string>
+    <string name="Tresure_Hunt_Team">Tresure Hunt Team</string>
+    <string name="btn_choose_image">Select Photo</string>
 
 
 </resources>

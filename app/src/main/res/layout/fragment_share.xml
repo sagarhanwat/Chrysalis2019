@@ -16,13 +16,22 @@
         android:layout_height="wrap_content"
         android:hint="@string/add_caption"
         />
-
+    <Button
+        android:id="@+id/btn_choose_img"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:background="@color/BtnBackGround"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_choose_image"
+        />
 
     <Button
         android:id="@+id/btn_img_upload"
         android:padding="10dp"
+        android:background="@color/BtnBackGround"
         android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btn_upload_image"
         />

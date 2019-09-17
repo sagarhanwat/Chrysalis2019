@@ -34,12 +34,11 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="232dp"
         android:contentDescription="@string/nidhi_jha"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@mipmap/ic_image_nidhi"
         app:layout_constraintStart_toEndOf="@+id/barrier"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
@@ -50,14 +49,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-
         android:layout_marginTop="24dp"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
         android:layout_toStartOf="@+id/imageView3"
         android:layout_toLeftOf="@+id/imageView3"
         android:contentDescription="@string/sagar_hanwat"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@mipmap/ic_image_sagar"
         app:layout_constraintEnd_toStartOf="@+id/barrier"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
@@ -68,7 +66,6 @@
         android:layout_above="@+id/txt_dev"
         android:layout_below="@+id/txt_sagar"
         android:layout_alignParentStart="true"
-
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="232dp"
@@ -77,7 +74,7 @@
         android:layout_toStartOf="@+id/imageView5"
         android:layout_toLeftOf="@+id/imageView5"
         android:contentDescription="@string/devkant_mishra"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@mipmap/ic_image_dev"
         app:layout_constraintEnd_toStartOf="@+id/barrier"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
@@ -89,12 +86,11 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="24dp"
         android:contentDescription="@string/mohd_tausif_anwar"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@mipmap/ic_image_tausif"
         app:layout_constraintStart_toEndOf="@+id/barrier"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 

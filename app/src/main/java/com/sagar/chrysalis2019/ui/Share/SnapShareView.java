@@ -4,10 +4,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,6 +26,7 @@ import java.util.List;
 public class SnapShareView extends Fragment {
 
     private RecyclerView mRecycleView;
+    private Button btnOpenUpload;
 
 
     private List<uploadImgae> mUpload;
@@ -63,6 +66,18 @@ public class SnapShareView extends Fragment {
 
         mRecycleView=root.findViewById(R.id.recycleview_image_share);
 
+        btnOpenUpload=root.findViewById(R.id.btn_open_upload_actvity);
+
+        btnOpenUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Fragment fragment=new SnapShare();
+                FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment,fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
 
         return root;
     }

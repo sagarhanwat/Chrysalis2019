@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +36,7 @@ import static android.app.Activity.RESULT_OK;
 public class SnapShare extends Fragment {
 
     private EditText EtImgUploadText;
-    private Button BtnImgUpload;
+    private Button BtnImgUpload,btnChooseImg;
     private ImageView imgViewUpload;
     public static final int PICK_IMAGE = 1;
 
@@ -53,18 +52,21 @@ public class SnapShare extends Fragment {
         EtImgUploadText=root.findViewById(R.id.ET_img_uploadText);
         BtnImgUpload=root.findViewById(R.id.btn_img_upload);
         imgViewUpload=root.findViewById(R.id.ImgUPload);
+        btnChooseImg=root.findViewById(R.id.btn_choose_img);
 
-        imgViewUpload.setOnClickListener(new View.OnClickListener() {
+
+
+
+        btnChooseImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent pickPhoto = new Intent(Intent.ACTION_PICK,
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(pickPhoto , 1);
-
-                Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(takePicture, 0);
             }
         });
+
+
        BtnImgUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,21 +81,11 @@ public class SnapShare extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent imageReturnedIntent) {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
-        switch(requestCode) {
-            case 0:
-                if(resultCode == RESULT_OK){
-                    Uri selectedImage = imageReturnedIntent.getData();
-                    imgViewUpload.setImageURI(selectedImage);
-                }
 
-                break;
-            case 1:
                 if(resultCode == RESULT_OK){
                     Uri selectedImage = imageReturnedIntent.getData();
                     imgViewUpload.setImageURI(selectedImage);
                 }
-                break;
-        }
 
     }
     private void funUploadImg(){
